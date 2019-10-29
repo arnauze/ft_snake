@@ -57,7 +57,7 @@ void                Game::moveSnake(int direction) {
     int x2 = head->getX() + x;
     int y2 = head->getY() + y;
     this->snake->getSnake()->insert(this->snake->getSnake()->end(), new Position(x2, y2));
-    if ((x2 == this->food->getX() || x2 - 1 == this->food->getX()) && (y2 == this->food->getY() || y2 - 1 == this->food->getY())) {
+    if ((x2 == this->food->getX() || x2 - 1 == this->food->getX()) && y2 == this->food->getY()) {
         srand(time(NULL));
         delete this->food;
         this->food = new Position(rand() % getmaxx(stdscr), rand() % getmaxy(stdscr));
