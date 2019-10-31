@@ -20,11 +20,21 @@ class           Game {
         void    init(void);
         void    gameLoop(void);
         void    printObjects(void) const;
-        void    moveSnake(int direction);
+        void    moveSnake(void);
+        void    selfCollision(int x, int y);
+        void    printBackground(void);
 
     private:
         Snake   *snake;
         Position    *food;
+        bool        alive;
+        int         direction;
+        int         maxX;
+        int         maxY;
+        int         minX;
+        int         minY;
+        int         score;
+        int         timer;
 };
 
 #endif
